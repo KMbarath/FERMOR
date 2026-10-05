@@ -1,0 +1,66 @@
+.faq__grid {
+  display: grid;
+  gap: 32px;
+}
+.faq__list {
+  border-top: 1px solid var(--ink);
+}
+.faq__item {
+  border-bottom: 1px solid var(--line);
+}
+.faq__item h3 {
+  font-size: inherit;
+}
+.faq__item button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  min-height: 72px;
+  padding: 16px 0;
+  border: 0;
+  background: none;
+  text-align: left;
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 2.2vw, 1.4rem);
+  font-weight: 650;
+  letter-spacing: -0.015em;
+}
+.faq__item button svg {
+  flex: none;
+}
+.faq__item .plus {
+  transform-origin: 11px 11px;
+  transition: transform 0.25s;
+}
+.faq__item button[aria-expanded='true'] .plus {
+  transform: scaleY(0);
+}
+.faq__a {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+}
+.faq__a.is-open {
+  grid-template-rows: 1fr;
+}
+.faq__a > div {
+  overflow: hidden;
+}
+.faq__a p {
+  padding-bottom: 24px;
+  max-width: 60ch;
+  color: var(--ink-soft);
+}
+.faq__a:not(.is-open) {
+  visibility: hidden;
+  transition: grid-template-rows 0.3s ease, visibility 0s 0.3s;
+}
+@media (min-width: 960px) {
+  .faq__grid {
+    grid-template-columns: minmax(0, 4fr) minmax(0, 7fr);
+    gap: 72px;
+    align-items: start;
+  }
+}

@@ -1,0 +1,93 @@
+.principles {
+  background: var(--ink);
+  color: var(--white);
+}
+.principles .lede {
+  color: rgba(252, 253, 251, 0.78);
+}
+.principles__grid {
+  display: grid;
+  gap: 56px;
+}
+.principles__lead {
+  display: grid;
+  gap: 22px;
+  justify-items: start;
+}
+.lakh {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 8px;
+  width: 100%;
+  max-width: 440px;
+  margin-top: 8px;
+  padding: 20px;
+  border: 1px solid rgba(252, 253, 251, 0.2);
+  border-radius: var(--r-md);
+}
+.lakh label {
+  font-size: 0.9375rem;
+  color: rgba(252, 253, 251, 0.78);
+}
+.lakh__input {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 14px;
+  min-height: 52px;
+  border-radius: var(--r-sm);
+  background: rgba(252, 253, 251, 0.08);
+  border: 1.5px solid rgba(252, 253, 251, 0.25);
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 650;
+}
+.lakh__input:focus-within {
+  border-color: var(--green);
+}
+.lakh__input input {
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  background: none;
+  outline: none;
+  font: inherit;
+  color: var(--white);
+}
+.lakh__out {
+  font-size: 1.125rem;
+  font-weight: 650;
+  color: var(--green);
+}
+.lakh__out span {
+  color: rgba(252, 253, 251, 0.7);
+  font-weight: 500;
+}
+.principles__list {
+  display: grid;
+  border-top: 1px solid rgba(252, 253, 251, 0.35);
+}
+.principles__list > div {
+  display: grid;
+  gap: 8px;
+  padding: 28px 0;
+  border-bottom: 1px solid rgba(252, 253, 251, 0.16);
+}
+.principles__list dt {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+.principles__list dd {
+  color: rgba(252, 253, 251, 0.78);
+  max-width: 48ch;
+}
+@media (min-width: 960px) {
+  .principles__grid {
+    grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+    gap: 96px;
+    align-items: start;
+  }
+}

@@ -1,0 +1,85 @@
+.waitlist {
+  background: var(--green);
+  color: var(--ink);
+  padding-block: clamp(72px, 11vw, 150px);
+}
+.waitlist__inner {
+  display: grid;
+  gap: 40px;
+  align-items: end;
+}
+.waitlist__title {
+  font-size: clamp(3.2rem, 11vw, 8.5rem);
+  line-height: 0.94;
+  max-width: 11ch;
+}
+.waitlist__side {
+  display: grid;
+  gap: 20px;
+  max-width: 480px;
+}
+.waitlist__lede {
+  font-size: clamp(1.1rem, 1.6vw, 1.3rem);
+  font-weight: 550;
+}
+.waitlist__form {
+  display: grid;
+  gap: 12px;
+}
+.waitlist__form input {
+  min-height: 56px;
+  padding: 0 20px;
+  border-radius: 999px;
+  border: 2px solid var(--ink);
+  background: var(--white);
+  min-width: 0;
+}
+.waitlist__form input::placeholder {
+  color: var(--ink-soft);
+}
+.waitlist__form input[aria-invalid='true'] {
+  border-color: var(--rust);
+}
+.waitlist__form .btn {
+  min-height: 56px;
+}
+.waitlist__form .btn:disabled {
+  opacity: 0.7;
+  cursor: progress;
+}
+.waitlist__error {
+  min-height: 1.4em;
+  font-weight: 650;
+  color: #7c2412;
+}
+.waitlist__error:empty {
+  display: none;
+}
+.waitlist__done {
+  padding: 18px 22px;
+  border-radius: var(--r-md);
+  background: var(--ink);
+  color: var(--white);
+}
+.waitlist__done strong {
+  color: var(--green);
+  word-break: break-all;
+}
+.waitlist__fine {
+  font-size: 0.9rem;
+  color: #17432f;
+}
+@media (min-width: 640px) {
+  .waitlist__form {
+    grid-template-columns: 1fr auto;
+  }
+  .waitlist__error {
+    grid-column: 1 / -1;
+  }
+}
+@media (min-width: 960px) {
+  .waitlist__inner {
+    grid-template-columns: minmax(0, 1fr) 480px;
+    gap: 72px;
+  }
+}

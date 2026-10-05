@@ -1,0 +1,110 @@
+.ask {
+  background: var(--white);
+  border-block: 1px solid var(--line);
+}
+.ask__grid {
+  display: grid;
+  gap: 40px;
+  align-items: center;
+}
+.ask__copy {
+  display: grid;
+  gap: 22px;
+  justify-items: start;
+}
+.chat {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: clamp(18px, 3vw, 32px);
+  display: grid;
+  gap: 18px;
+  min-width: 0;
+}
+.chat__tag {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+.chat__log {
+  display: grid;
+  gap: 12px;
+  min-height: 232px;
+  align-content: start;
+}
+.bubble {
+  max-width: 88%;
+  padding: 12px 18px;
+  border-radius: 20px;
+}
+.bubble--me {
+  justify-self: end;
+  background: var(--ink);
+  color: var(--white);
+  border-bottom-right-radius: 6px;
+  font-weight: 600;
+}
+.bubble--fermor {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-bottom-left-radius: 6px;
+}
+.bubble--typing {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  width: 72px;
+  height: 46px;
+}
+.bubble--typing span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--ink-soft);
+  animation: blink 1s infinite;
+}
+.bubble--typing span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.bubble--typing span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+@keyframes blink {
+  0%,
+  80%,
+  100% {
+    opacity: 0.25;
+  }
+  40% {
+    opacity: 1;
+  }
+}
+.chat__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.chat__chips button {
+  min-height: 44px;
+  padding: 0 16px;
+  border-radius: 999px;
+  border: 1.5px solid var(--line);
+  background: none;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  text-align: left;
+  transition: border-color 0.15s, background-color 0.15s;
+}
+.chat__chips button:hover {
+  border-color: var(--ink);
+}
+.chat__chips button[aria-pressed='true'] {
+  background: var(--green);
+  border-color: var(--green);
+}
+@media (min-width: 960px) {
+  .ask__grid {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+    gap: 72px;
+  }
+}
